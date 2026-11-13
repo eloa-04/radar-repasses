@@ -22,5 +22,5 @@ if st.button("Gerar resumo"):
     from google import genai
     client = genai.Client(api_key=st.secrets["GEMINI_KEY"])
     prompt = "Resuma em português, em até 5 linhas, as divergências de repasse abaixo e sugira ações:\n" + divs.head(30).to_string()
-    resp = client.models.generate_content(model="gemini-3.8-flash", contents=prompt)
+    resp = client.models.generate_content(model="gemini-2.5-flash", contents=prompt)
     st.write(resp.text)
